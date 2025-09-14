@@ -5,16 +5,16 @@ class Xspring < Formula
   if OS.mac?
     if Hardware::CPU.arm?
       url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.0/xspring-aarch64-apple-darwin.tar.xz"
-      sha256 "f4d44b7002a980275423dd6e95697c0c8194842be13b38d52a11e23490fe981f"
+      sha256 "bf7b41d1647dab099e63a2f3307130bdea08062b57f03207fe431070913055d2"
     end
     if Hardware::CPU.intel?
       url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.0/xspring-x86_64-apple-darwin.tar.xz"
-      sha256 "77bfc589ff8d9d7f7e1235c51bc88131ec66f96a0dbe99b3c2685dec7d26145f"
+      sha256 "097e635675ca3854092a513f6de00246787053f61facff195d0fc93a3ca8d9bb"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.0/xspring-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "1d4c8f9083dad1c6f0ef37091f32c913c4b2ad3572d2be8cef1de1c7588a8d8f"
+    sha256 "613f2a819176236c4c45dc7d90bd84037fef8f17ad1c1bf52285603fdbd9089b"
   end
   license any_of: ["MIT", "Apache-2.0"]
 
