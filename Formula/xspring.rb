@@ -1,28 +1,37 @@
 class Xspring < Formula
   desc "A tool to scaffold spring boot projects interactively like the vs code extension for scaffolding a spring boot project"
   homepage "https://github.com/MohdShahulMalik/xspring"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.0/xspring-aarch64-apple-darwin.tar.xz"
-      sha256 "bf7b41d1647dab099e63a2f3307130bdea08062b57f03207fe431070913055d2"
+      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.1/xspring-aarch64-apple-darwin.tar.xz"
+      sha256 "953ae1973cda8c85d4702de6249c2d8b55f7eb427fc770405df984d79336e534"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.0/xspring-x86_64-apple-darwin.tar.xz"
-      sha256 "097e635675ca3854092a513f6de00246787053f61facff195d0fc93a3ca8d9bb"
+      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.1/xspring-x86_64-apple-darwin.tar.xz"
+      sha256 "c5be912ac7e9fb5763287431189d47217049e35919799cd6356b8222535419df"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.0/xspring-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "613f2a819176236c4c45dc7d90bd84037fef8f17ad1c1bf52285603fdbd9089b"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.1/xspring-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "f5b997b823ac36a6e82a7e07cdb86778db7b6eb3df0c3041a43521a7c4567942"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.1/xspring-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "bf9b72d28d371592aaddc6dbe9b12decbdc8d5ac32bab0f45abe2a1b6132e7a3"
+    end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-pc-windows-gnu":    {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":              {},
+    "aarch64-unknown-linux-gnu":         {},
+    "x86_64-apple-darwin":               {},
+    "x86_64-pc-windows-gnu":             {},
+    "x86_64-unknown-linux-gnu":          {},
+    "x86_64-unknown-linux-musl-dynamic": {},
+    "x86_64-unknown-linux-musl-static":  {},
   }.freeze
 
   def target_triple
@@ -43,6 +52,7 @@ class Xspring < Formula
   def install
     bin.install "xspring" if OS.mac? && Hardware::CPU.arm?
     bin.install "xspring" if OS.mac? && Hardware::CPU.intel?
+    bin.install "xspring" if OS.linux? && Hardware::CPU.arm?
     bin.install "xspring" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
