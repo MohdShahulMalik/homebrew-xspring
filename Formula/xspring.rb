@@ -1,25 +1,25 @@
 class Xspring < Formula
   desc "A tool to scaffold spring boot projects interactively like the vs code extension for scaffolding a spring boot project"
   homepage "https://github.com/MohdShahulMalik/xspring"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.1/xspring-aarch64-apple-darwin.tar.xz"
-      sha256 "953ae1973cda8c85d4702de6249c2d8b55f7eb427fc770405df984d79336e534"
+      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.2/xspring-aarch64-apple-darwin.tar.xz"
+      sha256 "7ce82c22e9d1d51a97d07fa4c0bce3d7b6756d8737667f7ef25c03f99687274a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.1/xspring-x86_64-apple-darwin.tar.xz"
-      sha256 "c5be912ac7e9fb5763287431189d47217049e35919799cd6356b8222535419df"
+      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.2/xspring-x86_64-apple-darwin.tar.xz"
+      sha256 "681c3db971d1ee59e6be9f202f61c425b4331efc1598026bbb68190335274fd0"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.1/xspring-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f5b997b823ac36a6e82a7e07cdb86778db7b6eb3df0c3041a43521a7c4567942"
+      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.2/xspring-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "31fd2038e4e9167ef312f26f4724a64dfb4da931ca75edadbdf77e12669c6248"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.1/xspring-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "bf9b72d28d371592aaddc6dbe9b12decbdc8d5ac32bab0f45abe2a1b6132e7a3"
+      url "https://github.com/MohdShahulMalik/xspring/releases/download/v0.1.2/xspring-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "20b4f5782474e81521b96e3e7f1f4db6122373e58954cee95f7c1779ff25f87d"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
